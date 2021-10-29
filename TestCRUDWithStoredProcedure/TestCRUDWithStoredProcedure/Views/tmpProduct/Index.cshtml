@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewBag.Title = "Product Home Page";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<table class="table mt-3">
+    <thead>
+        <tr class="bg-dark">
+            <td colspan="5" style="color: white;" class="text-center h2">@ViewBag.Title</td>
+        </tr>
+    </thead>
+    <tbody></tbody>
+</table>
+
+
+@Html.Action("TmpProductGridViewPartial")
+
+
+
+

@@ -1,0 +1,35 @@
+@{
+	var grid = Html.DevExpress().GridView(settings => {
+            settings.Name = "TmpProductGridView";
+            settings.CallbackRouteValues = new { Controller = "tmpProduct", Action = "TmpProductGridViewPartial" };
+
+		    settings.SettingsEditing.AddNewRowRouteValues = new { Controller = "tmpProduct", Action = "TmpProductGridViewPartialAddNew" };
+            settings.SettingsEditing.UpdateRowRouteValues = new { Controller = "tmpProduct", Action = "TmpProductGridViewPartialUpdate" };
+            settings.SettingsEditing.DeleteRowRouteValues = new { Controller = "tmpProduct", Action = "TmpProductGridViewPartialDelete" };
+            settings.SettingsEditing.Mode = GridViewEditingMode.EditFormAndDisplayRow;
+            settings.SettingsBehavior.ConfirmDelete = true;
+
+		    settings.CommandColumn.Visible = true;
+            settings.CommandColumn.ShowNewButton = true;
+            settings.CommandColumn.ShowDeleteButton = true;
+            settings.CommandColumn.ShowEditButton = true;
+
+		    settings.KeyFieldName = "product_id";
+
+		    settings.SettingsPager.Visible = true;
+		    settings.Settings.ShowGroupPanel = true;
+		    settings.Settings.ShowFilterRow = true;
+		    settings.SettingsBehavior.AllowSelectByRowClick = true;
+
+			settings.Columns.Add("product_id");
+			settings.Columns.Add("product_name");
+			settings.Columns.Add("product_quantity");
+			settings.Columns.Add("product_unit_price");
+			settings.Columns.Add("created_at");
+		});
+
+		if (ViewData["EditError"] != null){
+            grid.SetEditErrorText((string)ViewData["EditError"]);
+        }
+}
+@grid.Bind(Model).GetHtml()

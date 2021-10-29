@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="dbTmpModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="tmp_product">
+    <Key>
+      <PropertyRef Name="product_id" />
+    </Key>
+    <Property Name="product_id" Type="int" Nullable="false" />
+    <Property Name="product_name" Type="varchar" MaxLength="50" />
+    <Property Name="product_quantity" Type="int" />
+    <Property Name="product_unit_price" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="created_at" Type="datetime" />
+  </EntityType>
+  <Function Name="NSP_tmp_product_Delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="product_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="NSP_tmp_product_Insert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="product_name" Type="varchar" Mode="In" />
+    <Parameter Name="product_quantity" Type="int" Mode="In" />
+    <Parameter Name="product_unit_price" Type="decimal" Mode="In" />
+    <Parameter Name="created_at" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="NSP_tmp_product_SelectAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="product_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="NSP_tmp_product_SelectByPK" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="product_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="NSP_tmp_product_Update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="product_id" Type="int" Mode="In" />
+    <Parameter Name="product_name" Type="varchar" Mode="In" />
+    <Parameter Name="product_quantity" Type="int" Mode="In" />
+    <Parameter Name="product_unit_price" Type="decimal" Mode="In" />
+    <Parameter Name="created_at" Type="datetime" Mode="In" />
+  </Function>
+  <EntityContainer Name="dbTmpModelStoreContainer">
+    <EntitySet Name="tmp_product" EntityType="Self.tmp_product" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

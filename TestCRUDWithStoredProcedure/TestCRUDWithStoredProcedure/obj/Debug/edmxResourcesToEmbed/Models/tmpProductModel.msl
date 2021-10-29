@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="dbTmpModelStoreContainer" CdmEntityContainer="dbTmpEntities1">
+    <EntitySetMapping Name="tmp_product">
+      <EntityTypeMapping TypeName="dbTmpModel.tmp_product">
+        <MappingFragment StoreEntitySet="tmp_product">
+          <ScalarProperty Name="product_id" ColumnName="product_id" />
+          <ScalarProperty Name="product_name" ColumnName="product_name" />
+          <ScalarProperty Name="product_quantity" ColumnName="product_quantity" />
+          <ScalarProperty Name="product_unit_price" ColumnName="product_unit_price" />
+          <ScalarProperty Name="created_at" ColumnName="created_at" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="dbTmpModel.tmp_product">
+        <ModificationFunctionMapping>
+          <UpdateFunction FunctionName="dbTmpModel.Store.NSP_tmp_product_Update">
+            <ScalarProperty Name="created_at" ParameterName="created_at" Version="Current" />
+            <ScalarProperty Name="product_unit_price" ParameterName="product_unit_price" Version="Current" />
+            <ScalarProperty Name="product_quantity" ParameterName="product_quantity" Version="Current" />
+            <ScalarProperty Name="product_name" ParameterName="product_name" Version="Current" />
+            <ScalarProperty Name="product_id" ParameterName="product_id" Version="Current" />
+          </UpdateFunction>
+          <InsertFunction FunctionName="dbTmpModel.Store.NSP_tmp_product_Insert">
+            <ScalarProperty Name="created_at" ParameterName="created_at" />
+            <ScalarProperty Name="product_unit_price" ParameterName="product_unit_price" />
+            <ScalarProperty Name="product_quantity" ParameterName="product_quantity" />
+            <ScalarProperty Name="product_name" ParameterName="product_name" />
+          </InsertFunction>
+          <DeleteFunction FunctionName="dbTmpModel.Store.NSP_tmp_product_Delete">
+            <ScalarProperty Name="product_id" ParameterName="product_id" />
+          </DeleteFunction>
+        </ModificationFunctionMapping>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
