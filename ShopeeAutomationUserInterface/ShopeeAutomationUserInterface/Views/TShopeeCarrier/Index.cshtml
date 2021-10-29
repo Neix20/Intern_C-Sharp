@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewBag.Title = "Shopee Carrier Listing";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section tmp_script {
+    <script type="text/javascript">$(".nav-item:nth-child(4)").children().addClass("active")</script>
+}
+
+<table class="table mt-3">
+    <thead>
+        <tr class="bg-dark">
+            <td colspan="5" style="color: white;" class="text-center h2">@ViewBag.Title</td>
+        </tr>
+    </thead>
+    <tbody></tbody>
+</table>
+
+
+@Html.Action("ShopeeCarrierGridViewPartial")
+
+
+
+
+
+

@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="dbJavaSeleniumShopeeOrder.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="TShopeeOrder">
+    <Key>
+      <PropertyRef Name="order_id" />
+    </Key>
+    <Property Name="order_id" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="refund_status" Type="varchar" MaxLength="10" />
+    <Property Name="voucher_code" Type="varchar" MaxLength="50" />
+    <Property Name="payment_method" Type="varchar" MaxLength="50" />
+    <Property Name="purchase_date_time" Type="datetime" />
+    <Property Name="extra_charges" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="order_income" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="buyer_id" Type="int" />
+    <Property Name="shipping_detail_id" Type="int" />
+    <Property Name="order_transaction_id" Type="int" />
+  </EntityType>
+  <EntityContainer Name="dbJavaSeleniumShopeeOrderStoreContainer">
+    <EntitySet Name="TShopeeOrder" EntityType="Self.TShopeeOrder" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

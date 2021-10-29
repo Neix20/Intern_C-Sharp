@@ -1,0 +1,38 @@
+@{
+	var grid = Html.DevExpress().GridView(settings => {
+        settings.Name = "ShopeeOrderGridView";
+        settings.CallbackRouteValues = new { Controller = "TShopeeOrder", Action = "ShopeeOrderGridViewPartial" };
+
+				settings.SettingsEditing.AddNewRowRouteValues = new { Controller = "TShopeeOrder", Action = "ShopeeOrderGridViewPartialAddNew" };
+        settings.SettingsEditing.UpdateRowRouteValues = new { Controller = "TShopeeOrder", Action = "ShopeeOrderGridViewPartialUpdate" };
+        settings.SettingsEditing.DeleteRowRouteValues = new { Controller = "TShopeeOrder", Action = "ShopeeOrderGridViewPartialDelete" };
+        settings.SettingsEditing.Mode = GridViewEditingMode.EditFormAndDisplayRow;
+        settings.SettingsBehavior.ConfirmDelete = true;
+
+		settings.CommandColumn.Visible = true;
+        settings.CommandColumn.ShowNewButton = true;
+        settings.CommandColumn.ShowDeleteButton = true;
+        settings.CommandColumn.ShowEditButton = true;
+
+		settings.KeyFieldName = "order_id";
+
+		settings.SettingsPager.Visible = true;
+		settings.Settings.ShowGroupPanel = true;
+		settings.Settings.ShowFilterRow = true;
+		settings.SettingsBehavior.AllowSelectByRowClick = true;
+
+				settings.Columns.Add("order_id");
+				settings.Columns.Add("refund_status");
+				settings.Columns.Add("voucher_code");
+				settings.Columns.Add("payment_method");
+				settings.Columns.Add("purchase_date_time");
+				settings.Columns.Add("extra_charges");
+				settings.Columns.Add("order_income");
+				settings.Columns.Add("buyer_id");
+				settings.Columns.Add("shipping_detail_id");
+			});
+		if (ViewData["EditError"] != null){
+        grid.SetEditErrorText((string)ViewData["EditError"]);
+    }
+}
+@grid.Bind(Model).GetHtml()

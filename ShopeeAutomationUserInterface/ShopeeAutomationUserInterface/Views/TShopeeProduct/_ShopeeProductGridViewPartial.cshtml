@@ -1,0 +1,35 @@
+@{
+	var grid = Html.DevExpress().GridView(settings => {
+        settings.Name = "ShopeeProductGridView";
+        settings.CallbackRouteValues = new { Controller = "TShopeeProduct", Action = "ShopeeProductGridViewPartial" };
+
+				settings.SettingsEditing.AddNewRowRouteValues = new { Controller = "TShopeeProduct", Action = "ShopeeProductGridViewPartialAddNew" };
+        settings.SettingsEditing.UpdateRowRouteValues = new { Controller = "TShopeeProduct", Action = "ShopeeProductGridViewPartialUpdate" };
+        settings.SettingsEditing.DeleteRowRouteValues = new { Controller = "TShopeeProduct", Action = "ShopeeProductGridViewPartialDelete" };
+        settings.SettingsEditing.Mode = GridViewEditingMode.EditFormAndDisplayRow;
+        settings.SettingsBehavior.ConfirmDelete = true;
+
+		settings.CommandColumn.Visible = true;
+        settings.CommandColumn.ShowNewButton = true;
+        settings.CommandColumn.ShowDeleteButton = true;
+        settings.CommandColumn.ShowEditButton = true;
+
+		settings.KeyFieldName = "product_transaction_id";
+
+		settings.SettingsPager.Visible = true;
+		settings.Settings.ShowGroupPanel = true;
+		settings.Settings.ShowFilterRow = true;
+		settings.SettingsBehavior.AllowSelectByRowClick = true;
+
+				settings.Columns.Add("product_transaction_id");
+				settings.Columns.Add("product_id");
+				settings.Columns.Add("product_name");
+				settings.Columns.Add("product_variety");
+				settings.Columns.Add("product_stock_quantity");
+				settings.Columns.Add("product_unit_price");
+			});
+		if (ViewData["EditError"] != null){
+        grid.SetEditErrorText((string)ViewData["EditError"]);
+    }
+}
+@grid.Bind(Model).GetHtml()

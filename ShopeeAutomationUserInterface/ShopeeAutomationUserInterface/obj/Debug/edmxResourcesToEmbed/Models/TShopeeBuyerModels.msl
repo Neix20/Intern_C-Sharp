@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="dbJavaSeleniumShopeeBuyer2StoreContainer" CdmEntityContainer="dbJavaSeleniumShopeeBuyer">
+    <EntitySetMapping Name="TShopeeBuyers">
+      <EntityTypeMapping TypeName="dbJavaSeleniumShopeeBuyer2.TShopeeBuyer">
+        <MappingFragment StoreEntitySet="TShopeeBuyer">
+          <ScalarProperty Name="buyer_id" ColumnName="buyer_id" />
+          <ScalarProperty Name="buyer_username" ColumnName="buyer_username" />
+          <ScalarProperty Name="buyer_name" ColumnName="buyer_name" />
+          <ScalarProperty Name="buyer_mobile_phone" ColumnName="buyer_mobile_phone" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="NSP_TShopeeBuyer_Delete" FunctionName="dbJavaSeleniumShopeeBuyer2.Store.NSP_TShopeeBuyer_Delete" />
+    <FunctionImportMapping FunctionImportName="NSP_TShopeeBuyer_Insert" FunctionName="dbJavaSeleniumShopeeBuyer2.Store.NSP_TShopeeBuyer_Insert" />
+    <FunctionImportMapping FunctionImportName="NSP_TShopeeBuyer_SelectAll" FunctionName="dbJavaSeleniumShopeeBuyer2.Store.NSP_TShopeeBuyer_SelectAll">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbJavaSeleniumShopeeBuyer2.NSP_TShopeeBuyer_SelectAll_Result">
+          <ScalarProperty Name="buyer_id" ColumnName="buyer_id" />
+          <ScalarProperty Name="buyer_username" ColumnName="buyer_username" />
+          <ScalarProperty Name="buyer_name" ColumnName="buyer_name" />
+          <ScalarProperty Name="buyer_mobile_phone" ColumnName="buyer_mobile_phone" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="NSP_TShopeeBuyer_SelectByPK" FunctionName="dbJavaSeleniumShopeeBuyer2.Store.NSP_TShopeeBuyer_SelectByPK">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbJavaSeleniumShopeeBuyer2.NSP_TShopeeBuyer_SelectByPK_Result">
+          <ScalarProperty Name="buyer_id" ColumnName="buyer_id" />
+          <ScalarProperty Name="buyer_username" ColumnName="buyer_username" />
+          <ScalarProperty Name="buyer_name" ColumnName="buyer_name" />
+          <ScalarProperty Name="buyer_mobile_phone" ColumnName="buyer_mobile_phone" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="NSP_TShopeeBuyer_SelectByUserName" FunctionName="dbJavaSeleniumShopeeBuyer2.Store.NSP_TShopeeBuyer_SelectByUserName">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbJavaSeleniumShopeeBuyer2.NSP_TShopeeBuyer_SelectByUserName_Result">
+          <ScalarProperty Name="buyer_id" ColumnName="buyer_id" />
+          <ScalarProperty Name="buyer_username" ColumnName="buyer_username" />
+          <ScalarProperty Name="buyer_name" ColumnName="buyer_name" />
+          <ScalarProperty Name="buyer_mobile_phone" ColumnName="buyer_mobile_phone" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="NSP_TShopeeBuyer_Update" FunctionName="dbJavaSeleniumShopeeBuyer2.Store.NSP_TShopeeBuyer_Update" />
+  </EntityContainerMapping>
+</Mapping>

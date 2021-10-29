@@ -1,0 +1,33 @@
+@{
+	var grid = Html.DevExpress().GridView(settings => {
+        settings.Name = "ShopeeBuyerGridView";
+        settings.CallbackRouteValues = new { Controller = "TShopeeBuyer", Action = "ShopeeBuyerGridViewPartial" };
+
+				settings.SettingsEditing.AddNewRowRouteValues = new { Controller = "TShopeeBuyer", Action = "ShopeeBuyerGridViewPartialAddNew" };
+        settings.SettingsEditing.UpdateRowRouteValues = new { Controller = "TShopeeBuyer", Action = "ShopeeBuyerGridViewPartialUpdate" };
+        settings.SettingsEditing.DeleteRowRouteValues = new { Controller = "TShopeeBuyer", Action = "ShopeeBuyerGridViewPartialDelete" };
+        settings.SettingsEditing.Mode = GridViewEditingMode.EditFormAndDisplayRow;
+        settings.SettingsBehavior.ConfirmDelete = true;
+
+		settings.CommandColumn.Visible = true;
+        settings.CommandColumn.ShowNewButton = true;
+        settings.CommandColumn.ShowDeleteButton = true;
+        settings.CommandColumn.ShowEditButton = true;
+
+		settings.KeyFieldName = "buyer_id";
+
+		settings.SettingsPager.Visible = true;
+		settings.Settings.ShowGroupPanel = true;
+		settings.Settings.ShowFilterRow = true;
+		settings.SettingsBehavior.AllowSelectByRowClick = true;
+
+				settings.Columns.Add("buyer_id");
+				settings.Columns.Add("buyer_username");
+				settings.Columns.Add("buyer_name");
+				settings.Columns.Add("buyer_mobile_phone");
+			});
+		if (ViewData["EditError"] != null){
+        grid.SetEditErrorText((string)ViewData["EditError"]);
+    }
+}
+@grid.Bind(Model).GetHtml()

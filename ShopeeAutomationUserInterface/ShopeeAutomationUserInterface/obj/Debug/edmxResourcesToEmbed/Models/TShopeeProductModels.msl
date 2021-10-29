@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="dbJavaSeleniumModelStoreContainer" CdmEntityContainer="dbJavaSeleniumShopeeProduct">
+    <EntitySetMapping Name="TShopeeProducts">
+      <EntityTypeMapping TypeName="dbJavaSeleniumModel.TShopeeProduct">
+        <MappingFragment StoreEntitySet="TShopeeProduct">
+          <ScalarProperty Name="product_transaction_id" ColumnName="product_transaction_id" />
+          <ScalarProperty Name="product_id" ColumnName="product_id" />
+          <ScalarProperty Name="product_name" ColumnName="product_name" />
+          <ScalarProperty Name="product_variety" ColumnName="product_variety" />
+          <ScalarProperty Name="product_stock_quantity" ColumnName="product_stock_quantity" />
+          <ScalarProperty Name="product_unit_price" ColumnName="product_unit_price" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="NSP_TShopeeProduct_Delete" FunctionName="dbJavaSeleniumModel.Store.NSP_TShopeeProduct_Delete" />
+    <FunctionImportMapping FunctionImportName="NSP_TShopeeProduct_Insert" FunctionName="dbJavaSeleniumModel.Store.NSP_TShopeeProduct_Insert" />
+    <FunctionImportMapping FunctionImportName="NSP_TShopeeProduct_SelectAll" FunctionName="dbJavaSeleniumModel.Store.NSP_TShopeeProduct_SelectAll">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbJavaSeleniumModel.NSP_TShopeeProduct_SelectAll_Result">
+          <ScalarProperty Name="product_transaction_id" ColumnName="product_transaction_id" />
+          <ScalarProperty Name="product_id" ColumnName="product_id" />
+          <ScalarProperty Name="product_name" ColumnName="product_name" />
+          <ScalarProperty Name="product_variety" ColumnName="product_variety" />
+          <ScalarProperty Name="product_stock_quantity" ColumnName="product_stock_quantity" />
+          <ScalarProperty Name="product_unit_price" ColumnName="product_unit_price" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="NSP_TShopeeProduct_SelectByNameAndVariety" FunctionName="dbJavaSeleniumModel.Store.NSP_TShopeeProduct_SelectByNameAndVariety">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbJavaSeleniumModel.NSP_TShopeeProduct_SelectByNameAndVariety_Result">
+          <ScalarProperty Name="product_transaction_id" ColumnName="product_transaction_id" />
+          <ScalarProperty Name="product_id" ColumnName="product_id" />
+          <ScalarProperty Name="product_name" ColumnName="product_name" />
+          <ScalarProperty Name="product_variety" ColumnName="product_variety" />
+          <ScalarProperty Name="product_stock_quantity" ColumnName="product_stock_quantity" />
+          <ScalarProperty Name="product_unit_price" ColumnName="product_unit_price" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="NSP_TShopeeProduct_SelectByPK" FunctionName="dbJavaSeleniumModel.Store.NSP_TShopeeProduct_SelectByPK">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbJavaSeleniumModel.NSP_TShopeeProduct_SelectByPK_Result">
+          <ScalarProperty Name="product_transaction_id" ColumnName="product_transaction_id" />
+          <ScalarProperty Name="product_id" ColumnName="product_id" />
+          <ScalarProperty Name="product_name" ColumnName="product_name" />
+          <ScalarProperty Name="product_variety" ColumnName="product_variety" />
+          <ScalarProperty Name="product_stock_quantity" ColumnName="product_stock_quantity" />
+          <ScalarProperty Name="product_unit_price" ColumnName="product_unit_price" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="NSP_TShopeeProduct_Update" FunctionName="dbJavaSeleniumModel.Store.NSP_TShopeeProduct_Update" />
+  </EntityContainerMapping>
+</Mapping>

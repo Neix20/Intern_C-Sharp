@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="dbJavaSeleniumModel1StoreContainer" CdmEntityContainer="dbJavaSeleniumShopeeCarrier">
+    <EntitySetMapping Name="TShopeeCarriers">
+      <EntityTypeMapping TypeName="dbJavaSeleniumModel1.TShopeeCarrier">
+        <MappingFragment StoreEntitySet="TShopeeCarrier">
+          <ScalarProperty Name="carrier_id" ColumnName="carrier_id" />
+          <ScalarProperty Name="carrier_name" ColumnName="carrier_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

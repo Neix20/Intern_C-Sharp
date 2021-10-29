@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="dbJavaSeleniumShopeeOrder" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="TShopeeOrder">
+    <Key>
+      <PropertyRef Name="order_id" />
+    </Key>
+    <Property Name="order_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="refund_status" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="voucher_code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="payment_method" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="purchase_date_time" Type="DateTime" Precision="3" />
+    <Property Name="extra_charges" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="order_income" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="buyer_id" Type="Int32" />
+    <Property Name="shipping_detail_id" Type="Int32" />
+    <Property Name="order_transaction_id" Type="Int32" />
+  </EntityType>
+  <EntityContainer Name="dbJavaSeleniumEntity" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="TShopeeOrders" EntityType="Self.TShopeeOrder" />
+  </EntityContainer>
+</Schema>

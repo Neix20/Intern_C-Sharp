@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="dbJavaSeleniumShopeeBuyer2.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="TShopeeBuyer">
+    <Key>
+      <PropertyRef Name="buyer_id" />
+    </Key>
+    <Property Name="buyer_id" Type="int" Nullable="false" />
+    <Property Name="buyer_username" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="buyer_name" Type="varchar" MaxLength="100" />
+    <Property Name="buyer_mobile_phone" Type="varchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <Function Name="NSP_TShopeeBuyer_Delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="buyer_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="NSP_TShopeeBuyer_Insert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="buyer_username" Type="varchar" Mode="In" />
+    <Parameter Name="buyer_name" Type="varchar" Mode="In" />
+    <Parameter Name="buyer_mobile_phone" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="NSP_TShopeeBuyer_SelectAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="buyer_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="NSP_TShopeeBuyer_SelectByPK" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="buyer_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="NSP_TShopeeBuyer_SelectByUserName" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="buyer_username" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="NSP_TShopeeBuyer_Update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="buyer_id" Type="int" Mode="In" />
+    <Parameter Name="buyer_username" Type="varchar" Mode="In" />
+    <Parameter Name="buyer_name" Type="varchar" Mode="In" />
+    <Parameter Name="buyer_mobile_phone" Type="varchar" Mode="In" />
+  </Function>
+  <EntityContainer Name="dbJavaSeleniumShopeeBuyer2StoreContainer">
+    <EntitySet Name="TShopeeBuyer" EntityType="Self.TShopeeBuyer" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="dbJavaSeleniumModel1.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="TShopeeCarrier">
+    <Key>
+      <PropertyRef Name="carrier_id" />
+    </Key>
+    <Property Name="carrier_id" Type="int" Nullable="false" />
+    <Property Name="carrier_name" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityContainer Name="dbJavaSeleniumModel1StoreContainer">
+    <EntitySet Name="TShopeeCarrier" EntityType="Self.TShopeeCarrier" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

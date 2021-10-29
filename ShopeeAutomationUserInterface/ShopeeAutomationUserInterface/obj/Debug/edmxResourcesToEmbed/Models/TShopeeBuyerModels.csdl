@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="dbJavaSeleniumShopeeBuyer2" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="TShopeeBuyer">
+    <Key>
+      <PropertyRef Name="buyer_id" />
+    </Key>
+    <Property Name="buyer_id" Type="Int32" Nullable="false" />
+    <Property Name="buyer_username" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="buyer_name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="buyer_mobile_phone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="dbJavaSeleniumShopeeBuyer" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="TShopeeBuyers" EntityType="Self.TShopeeBuyer" />
+    <FunctionImport Name="NSP_TShopeeBuyer_Delete">
+      <Parameter Name="buyer_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="NSP_TShopeeBuyer_Insert">
+      <Parameter Name="buyer_username" Mode="In" Type="String" />
+      <Parameter Name="buyer_name" Mode="In" Type="String" />
+      <Parameter Name="buyer_mobile_phone" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="NSP_TShopeeBuyer_SelectAll" ReturnType="Collection(dbJavaSeleniumShopeeBuyer2.NSP_TShopeeBuyer_SelectAll_Result)">
+      <Parameter Name="buyer_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="NSP_TShopeeBuyer_SelectByPK" ReturnType="Collection(dbJavaSeleniumShopeeBuyer2.NSP_TShopeeBuyer_SelectByPK_Result)">
+      <Parameter Name="buyer_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="NSP_TShopeeBuyer_SelectByUserName" ReturnType="Collection(dbJavaSeleniumShopeeBuyer2.NSP_TShopeeBuyer_SelectByUserName_Result)">
+      <Parameter Name="buyer_username" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="NSP_TShopeeBuyer_Update">
+      <Parameter Name="buyer_id" Mode="In" Type="Int32" />
+      <Parameter Name="buyer_username" Mode="In" Type="String" />
+      <Parameter Name="buyer_name" Mode="In" Type="String" />
+      <Parameter Name="buyer_mobile_phone" Mode="In" Type="String" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="NSP_TShopeeBuyer_SelectAll_Result">
+    <Property Type="Int32" Name="buyer_id" Nullable="false" />
+    <Property Type="String" Name="buyer_username" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="buyer_name" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="buyer_mobile_phone" Nullable="false" MaxLength="20" />
+  </ComplexType>
+  <ComplexType Name="NSP_TShopeeBuyer_SelectByPK_Result">
+    <Property Type="Int32" Name="buyer_id" Nullable="false" />
+    <Property Type="String" Name="buyer_username" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="buyer_name" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="buyer_mobile_phone" Nullable="false" MaxLength="20" />
+  </ComplexType>
+  <ComplexType Name="NSP_TShopeeBuyer_SelectByUserName_Result">
+    <Property Type="Int32" Name="buyer_id" Nullable="false" />
+    <Property Type="String" Name="buyer_username" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="buyer_name" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="buyer_mobile_phone" Nullable="false" MaxLength="20" />
+  </ComplexType>
+</Schema>

@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="dbJavaSeleniumShopeeOrderStoreContainer" CdmEntityContainer="dbJavaSeleniumEntity">
+    <EntitySetMapping Name="TShopeeOrders">
+      <EntityTypeMapping TypeName="dbJavaSeleniumShopeeOrder.TShopeeOrder">
+        <MappingFragment StoreEntitySet="TShopeeOrder">
+          <ScalarProperty Name="order_id" ColumnName="order_id" />
+          <ScalarProperty Name="refund_status" ColumnName="refund_status" />
+          <ScalarProperty Name="voucher_code" ColumnName="voucher_code" />
+          <ScalarProperty Name="payment_method" ColumnName="payment_method" />
+          <ScalarProperty Name="purchase_date_time" ColumnName="purchase_date_time" />
+          <ScalarProperty Name="extra_charges" ColumnName="extra_charges" />
+          <ScalarProperty Name="order_income" ColumnName="order_income" />
+          <ScalarProperty Name="buyer_id" ColumnName="buyer_id" />
+          <ScalarProperty Name="shipping_detail_id" ColumnName="shipping_detail_id" />
+          <ScalarProperty Name="order_transaction_id" ColumnName="order_transaction_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

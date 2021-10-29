@@ -1,0 +1,31 @@
+@{
+	var grid = Html.DevExpress().GridView(settings => {
+        settings.Name = "ShopeeCarrierGridView";
+        settings.CallbackRouteValues = new { Controller = "TShopeeCarrier", Action = "ShopeeCarrierGridViewPartial" };
+
+				settings.SettingsEditing.AddNewRowRouteValues = new { Controller = "TShopeeCarrier", Action = "ShopeeCarrierGridViewPartialAddNew" };
+        settings.SettingsEditing.UpdateRowRouteValues = new { Controller = "TShopeeCarrier", Action = "ShopeeCarrierGridViewPartialUpdate" };
+        settings.SettingsEditing.DeleteRowRouteValues = new { Controller = "TShopeeCarrier", Action = "ShopeeCarrierGridViewPartialDelete" };
+        settings.SettingsEditing.Mode = GridViewEditingMode.EditFormAndDisplayRow;
+        settings.SettingsBehavior.ConfirmDelete = true;
+
+		settings.CommandColumn.Visible = true;
+        settings.CommandColumn.ShowNewButton = true;
+        settings.CommandColumn.ShowDeleteButton = true;
+        settings.CommandColumn.ShowEditButton = true;
+
+		settings.KeyFieldName = "carrier_id";
+
+		settings.SettingsPager.Visible = true;
+		settings.Settings.ShowGroupPanel = true;
+		settings.Settings.ShowFilterRow = true;
+		settings.SettingsBehavior.AllowSelectByRowClick = true;
+
+				settings.Columns.Add("carrier_id");
+				settings.Columns.Add("carrier_name");
+			});
+		if (ViewData["EditError"] != null){
+        grid.SetEditErrorText((string)ViewData["EditError"]);
+    }
+}
+@grid.Bind(Model).GetHtml()

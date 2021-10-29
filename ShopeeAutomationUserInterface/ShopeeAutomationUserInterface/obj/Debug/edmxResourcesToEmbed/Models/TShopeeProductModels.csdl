@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="dbJavaSeleniumModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="TShopeeProduct">
+    <Key>
+      <PropertyRef Name="product_transaction_id" />
+    </Key>
+    <Property Name="product_transaction_id" Type="Int32" Nullable="false" />
+    <Property Name="product_id" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="product_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="product_variety" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="product_stock_quantity" Type="Int32" />
+    <Property Name="product_unit_price" Type="Decimal" Precision="10" Scale="2" />
+  </EntityType>
+  <EntityContainer Name="dbJavaSeleniumShopeeProduct" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="TShopeeProducts" EntityType="Self.TShopeeProduct" />
+    <FunctionImport Name="NSP_TShopeeProduct_Delete">
+      <Parameter Name="product_transaction_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="NSP_TShopeeProduct_Insert">
+      <Parameter Name="product_id" Mode="In" Type="String" />
+      <Parameter Name="product_name" Mode="In" Type="String" />
+      <Parameter Name="product_variety" Mode="In" Type="String" />
+      <Parameter Name="product_stock_quantity" Mode="In" Type="Int32" />
+      <Parameter Name="product_unit_price" Mode="In" Type="Decimal" />
+    </FunctionImport>
+    <FunctionImport Name="NSP_TShopeeProduct_SelectAll" ReturnType="Collection(dbJavaSeleniumModel.NSP_TShopeeProduct_SelectAll_Result)">
+      <Parameter Name="product_transaction_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="NSP_TShopeeProduct_SelectByNameAndVariety" ReturnType="Collection(dbJavaSeleniumModel.NSP_TShopeeProduct_SelectByNameAndVariety_Result)">
+      <Parameter Name="product_name" Mode="In" Type="String" />
+      <Parameter Name="product_variety" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="NSP_TShopeeProduct_SelectByPK" ReturnType="Collection(dbJavaSeleniumModel.NSP_TShopeeProduct_SelectByPK_Result)">
+      <Parameter Name="product_transaction_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="NSP_TShopeeProduct_Update">
+      <Parameter Name="product_transaction_id" Mode="In" Type="Int32" />
+      <Parameter Name="product_id" Mode="In" Type="String" />
+      <Parameter Name="product_name" Mode="In" Type="String" />
+      <Parameter Name="product_variety" Mode="In" Type="String" />
+      <Parameter Name="product_stock_quantity" Mode="In" Type="Int32" />
+      <Parameter Name="product_unit_price" Mode="In" Type="Decimal" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="NSP_TShopeeProduct_SelectAll_Result">
+    <Property Type="Int32" Name="product_transaction_id" Nullable="false" />
+    <Property Type="String" Name="product_id" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="product_name" Nullable="false" />
+    <Property Type="String" Name="product_variety" Nullable="true" />
+    <Property Type="Int32" Name="product_stock_quantity" Nullable="true" />
+    <Property Type="Decimal" Name="product_unit_price" Nullable="true" Precision="10" Scale="2" />
+  </ComplexType>
+  <ComplexType Name="NSP_TShopeeProduct_SelectByNameAndVariety_Result">
+    <Property Type="Int32" Name="product_transaction_id" Nullable="false" />
+    <Property Type="String" Name="product_id" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="product_name" Nullable="false" />
+    <Property Type="String" Name="product_variety" Nullable="true" />
+    <Property Type="Int32" Name="product_stock_quantity" Nullable="true" />
+    <Property Type="Decimal" Name="product_unit_price" Nullable="true" Precision="10" Scale="2" />
+  </ComplexType>
+  <ComplexType Name="NSP_TShopeeProduct_SelectByPK_Result">
+    <Property Type="Int32" Name="product_transaction_id" Nullable="false" />
+    <Property Type="String" Name="product_id" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="product_name" Nullable="false" />
+    <Property Type="String" Name="product_variety" Nullable="true" />
+    <Property Type="Int32" Name="product_stock_quantity" Nullable="true" />
+    <Property Type="Decimal" Name="product_unit_price" Nullable="true" Precision="10" Scale="2" />
+  </ComplexType>
+</Schema>
